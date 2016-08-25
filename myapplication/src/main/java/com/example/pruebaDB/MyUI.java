@@ -50,8 +50,8 @@ public class MyUI extends UI {
                     + ", it works!"));
         });
         
-        Button buttonRap = new Button("Rapido",FontAwesome.USER_MD);
-        //Button buttonRap = new Button();
+        //Button buttonRap = new Button("Rapido",FontAwesome.USER_MD);
+        Button buttonRap = new Button();
         buttonRap.addClickListener( e -> {
             layout.addComponent(new Label("Thanks " + name.getValue() 
                     + ", it works!"));
@@ -63,7 +63,7 @@ public class MyUI extends UI {
                     + ", it works!"));
         });
         
-        //Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
+        Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
         Resource reg= new ThemeResource("images.jpeg");
         Resource regDirect= new ThemeResource("Directory-icon.png");
         
@@ -75,7 +75,7 @@ public class MyUI extends UI {
         button.setWidth("300px");
         
         buttonRap.setDescription("Rapido");
-        //buttonRap.setIcon(regRap);
+        buttonRap.setIcon(regRap);
         buttonRap.setHeight("200px");
         buttonRap.setWidth("300px");
         
