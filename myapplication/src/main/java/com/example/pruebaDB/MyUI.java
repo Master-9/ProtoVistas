@@ -42,7 +42,7 @@ public class MyUI extends UI {
         final VerticalLayout layout = new VerticalLayout();
         
         final TextField name = new TextField();
-        name.setCaption("Type your name here:");
+        name.setCaption("Escriba su nombre aqui:");
 
         Button button = new Button();
         button.addClickListener( e -> {
