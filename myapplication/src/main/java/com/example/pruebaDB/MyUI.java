@@ -7,6 +7,7 @@ import com.vaadin.annotations.Widgetset;
 
 import com.vaadin.navigator.Navigator;
 import com.example.vistas.StartView;
+import com.example.vistas.FormPSRapido;
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
@@ -28,14 +29,15 @@ import com.vaadin.ui.UI;
 
 public class MyUI extends UI {
 	Navigator navegador;
+	
     @Override
     protected void init(VaadinRequest vaadinRequest) {
     	
     	navegador = new Navigator(this,this);
     	
-    	navegador.addView("", new StartView());
-        
-    }
+    	navegador.addView(StartView.VIEW_NAME, new StartView());
+    	navegador.addView(FormPSRapido.VIEW_NAME, new FormPSRapido());
+   }
     
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

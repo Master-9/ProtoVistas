@@ -1,19 +1,26 @@
 package com.example.vistas;
 
+import com.example.pruebaDB.MyUI;
+import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
+import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class StartView extends VerticalLayout implements View {
-	
-	public StartView(){     
+	public final static String VIEW_NAME="";
+	Navigator nav;
+	public StartView(){
+	 
         final TextField name = new TextField();
         name.setCaption("Escriba su nombre aqui:");
 
@@ -24,11 +31,16 @@ public class StartView extends VerticalLayout implements View {
         });
         
         //Button buttonRap = new Button("Rapido",FontAwesome.USER_MD);
-        Button buttonRap = new Button();
-        buttonRap.addClickListener( e -> {
-            addComponent(new Label("Thanks " + name.getValue() 
-                    + ", it works!"));
-        });
+        Button buttonRap = new Button("",new Button.ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI ui= UI.getCurrent();
+				nav= ui.getNavigator();
+				nav.navigateTo(FormPSRapido.VIEW_NAME);
+			}
+		});
         
         Button buttonDirect = new Button();
         buttonDirect.addClickListener( e -> {
@@ -62,9 +74,11 @@ public class StartView extends VerticalLayout implements View {
         addComponents(name,hor);
         setMargin(true);
         setSpacing(true);
-        
-        //setContent(layout);
+        		
 	}
+	
+
+	
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
