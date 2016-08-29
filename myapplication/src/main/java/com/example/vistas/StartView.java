@@ -6,72 +6,74 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
-import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
+/*
+ * Este view será la portada del prototipo
+ */
 public class StartView extends VerticalLayout implements View {
 	public final static String VIEW_NAME="";
 	Navigator nav;
+	
+	
+	/*
+	 * Este view será la portada del prototipo
+	 * debe tener hacer login
+	 * debe tener la opcion de registrarse
+	 */
 	public StartView(){
 	 
         final TextField name = new TextField();
         name.setCaption("Escriba su nombre aqui:");
 
-        Button button = new Button();
-        button.addClickListener( e -> {
-            addComponent(new Label("Thanks " + name.getValue() 
-                    + ", it works!"));
-        });
+        //Button btn = new Button("Rapido",FontAwesome.USER_MD);
         
-        //Button buttonRap = new Button("Rapido",FontAwesome.USER_MD);
-        Button buttonRap = new Button("",new Button.ClickListener() {
-			
+        
+        Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
+        
+        /*Nav button to doctor  register view */
+        Button btn_register_ps = new Button("",new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				UI ui= UI.getCurrent();
 				nav= ui.getNavigator();
-				nav.navigateTo(FormPSRapido.VIEW_NAME);
+				nav.navigateTo(RegisterPS_options.VIEW_NAME);
 			}
 		});
+
+        /*Nav button to login view*/
+        Button btn_login = new Button("Login", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				UI ui = UI.getCurrent();
+				nav = ui.getNavigator();
+				nav.navigateTo(LoginView.VIEW_NAME);
+			}
+		});
+    
+        setSpacing(true);
+
+       
+        btn_login.setDescription("Login");
+        btn_login.setHeight("100px");
+        btn_login.setWidth("100px");
         
-        Button buttonDirect = new Button();
-        buttonDirect.addClickListener( e -> {
-            addComponent(new Label("Thanks " + name.getValue() 
-                    + ", it works!"));
-        });
         
-        Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
-        Resource reg= new ThemeResource("images.jpeg");
-        Resource regDirect= new ThemeResource("Directory-icon.png");
+        btn_register_ps.setDescription("Registrar Medico");
+        btn_register_ps.setHeight("100px");
+        btn_register_ps.setWidth("1000px");
         
-        
-        button.setDescription("Completo");
-        button.setIcon(reg);
-        //button.setSizeFull();
-        button.setHeight("200px");
-        button.setWidth("300px");
-        
-        buttonRap.setDescription("Rapido");
-        buttonRap.setIcon(regRap);
-        buttonRap.setHeight("200px");
-        buttonRap.setWidth("300px");
-        
-        buttonDirect.setDescription("Directorio");
-        buttonDirect.setIcon(regDirect);
-        buttonDirect.setHeight("200px");
-        buttonDirect.setWidth("300px");
         
         final HorizontalLayout hor = new HorizontalLayout();
-        hor.addComponents(button,buttonRap,buttonDirect);
-        addComponents(name,hor);
+        hor.addComponents(btn_login,btn_register_ps);
+        addComponents(hor);
         setMargin(true);
         setSpacing(true);
         		
