@@ -35,7 +35,17 @@
   @include valo;
 
   // Insert your own theme rules here
-  barraSup{
+  //.barraSup{
+  	//background: blue;
+  //}
+  .v-verticallayout{
+  	//background: red;
+  }
+  .ini{
   	background: blue;
   }
+  .v-ui{
+  	background: url("white-background.jpg");
+  }
+  
 }

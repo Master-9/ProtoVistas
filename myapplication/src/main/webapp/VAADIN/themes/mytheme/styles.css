@@ -12937,6 +12937,10 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 }
 
-.mytheme barraSup {
+.mytheme .ini {
 	background: blue;
+}
+
+.mytheme .v-ui {
+	background: url("white-background.jpg");
 }

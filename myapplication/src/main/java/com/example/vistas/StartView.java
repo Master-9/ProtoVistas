@@ -31,7 +31,8 @@ public class StartView extends VerticalLayout implements View {
 	 
         final TextField name = new TextField();
         name.setCaption("Escriba su nombre aqui:");
-
+        
+        setStyleName("ini");
       
         
         
@@ -78,6 +79,7 @@ public class StartView extends VerticalLayout implements View {
         //hor.setDefaultComponentAlignment(getDefaultComponentAlignment().TOP_RIGHT);
         hor.addComponents(btn_login,btn_register_ps);
         hor.setStyleName("barraSup");
+        hor.setWidth("200px");
         addComponents(hor);
         setComponentAlignment(hor, Alignment.TOP_RIGHT);
         setMargin(true);
