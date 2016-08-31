@@ -75,10 +75,11 @@ public class StartView extends VerticalLayout implements View {
         
         final HorizontalLayout hor = new HorizontalLayout();
         
-    
-        hor.setDefaultComponentAlignment(Alignment.TOP_RIGHT);
+        //hor.setDefaultComponentAlignment(getDefaultComponentAlignment().TOP_RIGHT);
         hor.addComponents(btn_login,btn_register_ps);
+        hor.setStyleName("barraSup");
         addComponents(hor);
+        setComponentAlignment(hor, Alignment.TOP_RIGHT);
         setMargin(true);
         setSpacing(true);
         		
