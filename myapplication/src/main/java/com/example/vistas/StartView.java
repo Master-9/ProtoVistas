@@ -6,6 +6,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
@@ -31,13 +32,13 @@ public class StartView extends VerticalLayout implements View {
         final TextField name = new TextField();
         name.setCaption("Escriba su nombre aqui:");
 
-        //Button btn = new Button("Rapido",FontAwesome.USER_MD);
+      
         
         
         Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
         
         /*Nav button to doctor  register view */
-        Button btn_register_ps = new Button("",new Button.ClickListener() {
+        Button btn_register_ps = new Button("Registrarse",new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -48,7 +49,7 @@ public class StartView extends VerticalLayout implements View {
 		});
 
         /*Nav button to login view*/
-        Button btn_login = new Button("Login", new Button.ClickListener() {
+        Button btn_login = new Button("Entrar", new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -62,16 +63,20 @@ public class StartView extends VerticalLayout implements View {
 
        
         btn_login.setDescription("Login");
-        btn_login.setHeight("100px");
-        btn_login.setWidth("100px");
+        btn_login.setHeight("40px");
+        btn_login.setWidth("110px");
         
         
         btn_register_ps.setDescription("Registrar Medico");
-        btn_register_ps.setHeight("100px");
-        btn_register_ps.setWidth("1000px");
+        btn_register_ps.setHeight("40px");
+        btn_register_ps.setWidth("110px");
+        
         
         
         final HorizontalLayout hor = new HorizontalLayout();
+        
+    
+        hor.setDefaultComponentAlignment(Alignment.TOP_RIGHT);
         hor.addComponents(btn_login,btn_register_ps);
         addComponents(hor);
         setMargin(true);
