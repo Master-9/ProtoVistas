@@ -1,5 +1,8 @@
 package com.example.vistas;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import com.example.pruebaDB.MyUI;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
@@ -9,9 +12,11 @@ import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
 
 /*
@@ -32,11 +37,16 @@ public class StartView extends VerticalLayout implements View {
         final TextField name = new TextField();
         name.setCaption("Escriba su nombre aqui:");
         
-        setStyleName("ini");
-      
+        final TextField nameer = new TextField();
+        name.setCaption("Escriba su nombre aqui:PPPP");
+
+       
         
         
-        Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
+       
+        
+        setStyleName("ini");            
+        //Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
         
         /*Nav button to doctor  register view */
         Button btn_register_ps = new Button("Registrarse",new Button.ClickListener() {
@@ -44,8 +54,14 @@ public class StartView extends VerticalLayout implements View {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				UI ui= UI.getCurrent();
-				nav= ui.getNavigator();
-				nav.navigateTo(RegisterPS_options.VIEW_NAME);
+				//nav= ui.getNavigator();
+				//nav.navigateTo(RegisterPS_options.VIEW_NAME);
+				ArrayList<Window> modalss= new ArrayList<>();
+				Collection<Window> loos= ui.getWindows();
+				for(Window j:loos){
+					modalss.add(j);
+				}
+				modalss.get(1).setVisible(true);
 			}
 		});
 
@@ -55,8 +71,16 @@ public class StartView extends VerticalLayout implements View {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				UI ui = UI.getCurrent();
-				nav = ui.getNavigator();
-				nav.navigateTo(LoginView.VIEW_NAME);
+				//nav = ui.getNavigator();
+				//nav.navigateTo(LoginView.VIEW_NAME);
+			
+				ArrayList<Window> modals= new ArrayList<>();
+				Collection<Window> los= ui.getWindows();
+				for(Window j:los){
+					modals.add(j);
+				}
+				modals.get(0).setVisible(true);
+				
 			}
 		});
     
@@ -76,14 +100,26 @@ public class StartView extends VerticalLayout implements View {
         
         final HorizontalLayout hor = new HorizontalLayout();
         
-        //hor.setDefaultComponentAlignment(getDefaultComponentAlignment().TOP_RIGHT);
-        hor.addComponents(btn_login,btn_register_ps);
+        
+        hor.setDefaultComponentAlignment(Alignment.MIDDLE_RIGHT);
+        
+       
+        
+        HorizontalLayout panelSupe= new HorizontalLayout();
+        panelSupe.addComponents(btn_login,btn_register_ps);
+        panelSupe.setWidth("240px");
+        hor.addComponents(panelSupe);
         hor.setStyleName("barraSup");
-        hor.setWidth("200px");
+        //panelSupe.setSpacing(true);
+        //panelSupe.setMargin(true);
+        hor.setSizeFull();
+        hor.setHeight("80px");
+        //panelSupe.setContent(hor);
         addComponents(hor);
-        setComponentAlignment(hor, Alignment.TOP_RIGHT);
+        setComponentAlignment(hor, Alignment.TOP_CENTER);
         setMargin(true);
         setSpacing(true);
+        setHeight("800px");
         		
 	}
 	

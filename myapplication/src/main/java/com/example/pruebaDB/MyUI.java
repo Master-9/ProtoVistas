@@ -1,5 +1,8 @@
 package com.example.pruebaDB;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
@@ -13,7 +16,9 @@ import com.example.vistas.StartView;
 import com.example.vistas.FormPSRapido;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 
 
 /**
@@ -30,6 +35,9 @@ import com.vaadin.ui.UI;
 
 public class MyUI extends UI {
 	Navigator navegador;
+	Window logIn;
+	Window newUser;
+	
 	
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -41,7 +49,41 @@ public class MyUI extends UI {
     	navegador.addView(RegisterPS_options.VIEW_NAME, new RegisterPS_options());
     	navegador.addView(FormPSRapido.VIEW_NAME, new FormPSRapido());
     	navegador.addView(FormPaciente.VIEW_NAME, new FormPaciente());
+    	
+    	final TextField name = new TextField("k");
+        name.setCaption("Escriba su nombre aqui:");
+        
+        final TextField nameer = new TextField("pppppppppp");
+        name.setCaption("Escriba su nombre aqui:PPPP");
+
+        
+        logIn= new Window("Loguearse");
+        logIn.setContent(name);
+        logIn.setContent(nameer);
+        logIn.center();
+        logIn.setVisible(false);
+        addWindow(logIn);
+        
+        
+        final TextField apell = new TextField();
+        name.setCaption("Escriba A:");
+        
+   
+        
+        newUser= new Window("Crear Usuario");
+        newUser.setContent(apell);
+        newUser.center();
+        newUser.setVisible(false);
+        addWindow(newUser);
+        
+        //modals= new ArrayList<>();
+        //Collection<Window> lista= getWindows();
+        //for(Window a:lista){
+        	//modals.add(a);
+        //}
+    	
    }
+    
     
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
