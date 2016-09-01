@@ -39,7 +39,7 @@ public class RegisterPS_options extends VerticalLayout implements View {
 				// TODO Auto-generated method stub
 				UI ui= UI.getCurrent();
 				nav= ui.getNavigator();
-				nav.navigateTo(FormPSRapido.VIEW_NAME);
+				nav.navigateTo(FormPSRapidoView.VIEW_NAME);
 			}
 		});
         

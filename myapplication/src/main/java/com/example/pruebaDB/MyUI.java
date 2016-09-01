@@ -9,13 +9,14 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.Navigator;
-import com.example.vistas.FormPaciente;
+import com.example.vistas.FormPacienteView;
 import com.example.vistas.LoginView;
 import com.example.vistas.RegisterPS_options;
 import com.example.vistas.StartView;
-import com.example.vistas.FormPSRapido;
+import com.example.vistas.FormPSRapidoView;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
@@ -47,40 +48,45 @@ public class MyUI extends UI {
     	navegador.addView(StartView.VIEW_NAME, new StartView());
     	navegador.addView(LoginView.VIEW_NAME, new LoginView());
     	navegador.addView(RegisterPS_options.VIEW_NAME, new RegisterPS_options());
-    	navegador.addView(FormPSRapido.VIEW_NAME, new FormPSRapido());
-    	navegador.addView(FormPaciente.VIEW_NAME, new FormPaciente());
+    	navegador.addView(FormPSRapidoView.VIEW_NAME, new FormPSRapidoView());
+    	navegador.addView(FormPacienteView.VIEW_NAME, new FormPacienteView());
     	
+    	
+    	
+    /*	
     	final TextField name = new TextField("k");
-        name.setCaption("Escriba su nombre aqui:");
-        
-        final TextField nameer = new TextField("pppppppppp");
-        name.setCaption("Escriba su nombre aqui:PPPP");
-
-        
+        name.setCaption("Escriba su nombre aqui:");   
         logIn= new Window("Loguearse");
         logIn.setContent(name);
-        logIn.setContent(nameer);
         logIn.center();
         logIn.setVisible(false);
         addWindow(logIn);
         
-        
         final TextField apell = new TextField();
-        name.setCaption("Escriba A:");
-        
-   
-        
+        name.setCaption("Escriba A:");     
         newUser= new Window("Crear Usuario");
-        newUser.setContent(apell);
+        newUser.setHeight("300px");
+        newUser.setWidth("300px");
+        FormLayout layout= new FormLayout();
+		layout.setMargin(true);
+				
+		final TextField nombreApell= new TextField("Nombre y Apellido:");
+		nombreApell.focus();
+		nombreApell.setWidth("210px");
+		nombreApell.setInputPrompt("Ricardo Cáseres");
+		layout.addComponent(nombreApell);	
+		final TextField tel= new TextField("tel:");
+		tel.focus();
+		tel.setWidth("210px");
+		tel.setInputPrompt("9098798");
+		layout.addComponent(tel);
+               
+        newUser.setContent(layout);
         newUser.center();
         newUser.setVisible(false);
         addWindow(newUser);
+     */   
         
-        //modals= new ArrayList<>();
-        //Collection<Window> lista= getWindows();
-        //for(Window a:lista){
-        	//modals.add(a);
-        //}
     	
    }
     

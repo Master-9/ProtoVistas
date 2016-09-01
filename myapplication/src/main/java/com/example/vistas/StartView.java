@@ -54,14 +54,8 @@ public class StartView extends VerticalLayout implements View {
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				UI ui= UI.getCurrent();
-				//nav= ui.getNavigator();
-				//nav.navigateTo(RegisterPS_options.VIEW_NAME);
-				ArrayList<Window> modalss= new ArrayList<>();
-				Collection<Window> loos= ui.getWindows();
-				for(Window j:loos){
-					modalss.add(j);
-				}
-				modalss.get(1).setVisible(true);
+				RegistrarUser uu= new RegistrarUser();
+			    ui.addWindow(uu);
 			}
 		});
 
@@ -74,12 +68,16 @@ public class StartView extends VerticalLayout implements View {
 				//nav = ui.getNavigator();
 				//nav.navigateTo(LoginView.VIEW_NAME);
 			
+				Autenticar vv= new Autenticar();
+				ui.addWindow(vv);
+				/*
 				ArrayList<Window> modals= new ArrayList<>();
 				Collection<Window> los= ui.getWindows();
 				for(Window j:los){
 					modals.add(j);
 				}
 				modals.get(0).setVisible(true);
+				*/
 				
 			}
 		});
