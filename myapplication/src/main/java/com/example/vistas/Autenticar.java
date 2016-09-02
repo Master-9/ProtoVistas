@@ -15,35 +15,38 @@ import com.vaadin.ui.ComboBox;
 
 public class Autenticar extends Window {
 	Navigator nav;
+	final FormLayout layout;
 	
 	public Autenticar(){
 		super("Ingresar");
 		setModal(true);
 		center();
-		HorizontalLayout lado= new HorizontalLayout();
+		
+		layout= new FormLayout();
+		layout.setMargin(true);
+		layout.setSizeUndefined();
+		VerticalLayout lado = new VerticalLayout();
+		
 		ComboBox tipoUser= new ComboBox("Tipo de Usuario");
 		tipoUser.addItem("Medico");
 		tipoUser.addItem("Paciente");
 		tipoUser.addItem("Contador");
+		tipoUser.setNullSelectionAllowed(false);
+		tipoUser.setWidth("210px");
+		tipoUser.focus();
+		layout.addComponent(tipoUser);
 		//String sel= tipoUser.getValue().toString();
 		
-		
-		FormLayout layout= new FormLayout();
-		layout.setMargin(true);
-		layout.setSizeUndefined();
-				
-		final TextField login= new TextField("login:");
-		login.focus();
+		final TextField login= new TextField("Usuario:");
 		login.setWidth("210px");
-		login.setInputPrompt("ramirez45");
+		login.setInputPrompt("usuario");
 		layout.addComponent(login);	
-		final PasswordField pas= new PasswordField("clave:");
-		pas.focus();
+		final PasswordField pas= new PasswordField("Contraseña:");
 		pas.setWidth("210px");
-		pas.setInputPrompt("*****");
+		pas.setInputPrompt("contraseña");
 		layout.addComponent(pas);
 		
-		lado.addComponents(layout,tipoUser);
+		lado.addComponents(layout);
 		
 		VerticalLayout nada = new VerticalLayout();
 		
