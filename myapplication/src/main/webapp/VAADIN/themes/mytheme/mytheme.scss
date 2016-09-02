@@ -36,7 +36,7 @@
 
   // Insert your own theme rules here
   .barraSup{
-  	background: blue;
+  	background: white;
   }
   .v-verticallayout{
   	//background: red;
@@ -45,7 +45,8 @@
   	//background: url("white-background.jpg");
   //}
   .v-ui{
-  	background: url("white-background.jpg");
+    background: url("white-background.jpg") no-repeat;
+    background-size: cover;
   }
   .mytheme img.v-icon {margin-top:-20px;}
 }

@@ -12938,11 +12938,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .mytheme .barraSup {
-	background: blue;
+	background: white;
 }
 
 .mytheme .v-ui {
-	background: url("white-background.jpg");
+	background: url("white-background.jpg") no-repeat;
+	background-size: cover;
 }
 
 .mytheme .mytheme img.v-icon {
