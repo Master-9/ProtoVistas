@@ -12,13 +12,6 @@ public class FormPaciente extends Formulario{
 		telefono.focus();
 		telefono.setWidth("210px");
 		
-		
-		ComboBox civil= new ComboBox("Estado Civil");
-		civil.addItem("Soltero");
-		civil.addItem("Casado");
-		civil.addItem("Divorciado");
-		civil.addItem("Viudo");
-		
 		final TextArea area= new TextArea();
 		area.setCaption("Direccion");
 		area.focus();

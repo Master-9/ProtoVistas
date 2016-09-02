@@ -10,7 +10,6 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.Navigator;
 import com.example.vistas.FormPacienteView;
-import com.example.vistas.LoginView;
 import com.example.vistas.RegisterPS_options;
 import com.example.vistas.StartView;
 import com.example.vistas.FormPSRapidoView;
@@ -46,7 +45,6 @@ public class MyUI extends UI {
     	navegador = new Navigator(this,this);
     	
     	navegador.addView(StartView.VIEW_NAME, new StartView());
-    	navegador.addView(LoginView.VIEW_NAME, new LoginView());
     	navegador.addView(RegisterPS_options.VIEW_NAME, new RegisterPS_options());
     	navegador.addView(FormPSRapidoView.VIEW_NAME, new FormPSRapidoView());
     	navegador.addView(FormPacienteView.VIEW_NAME, new FormPacienteView());

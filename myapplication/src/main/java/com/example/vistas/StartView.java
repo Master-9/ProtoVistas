@@ -115,7 +115,7 @@ public class StartView extends VerticalLayout implements View {
         //panelSupe.setContent(hor);
         addComponents(hor);
         setComponentAlignment(hor, Alignment.TOP_CENTER);
-        setMargin(true);
+        //setMargin(true);
         setSpacing(true);
         setHeight("800px");
         		

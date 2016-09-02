@@ -12944,3 +12944,7 @@ div.v-layout.v-horizontal.v-widget {
 .mytheme .v-ui {
 	background: url("white-background.jpg");
 }
+
+.mytheme .mytheme img.v-icon {
+	margin-top: -20px;
+}
