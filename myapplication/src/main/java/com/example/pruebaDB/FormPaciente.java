@@ -1,5 +1,6 @@
 package com.example.pruebaDB;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
@@ -17,9 +18,11 @@ public class FormPaciente extends Formulario{
 		area.focus();
 		area.setWidth("210px");
 		
-        setCaption("Formulario Paciente");
+        setCaption("Registrar Paciente");
 		
 		layout.addComponents(telefono,area);
+		layout.addComponent(btn_guardar);
+		layout.setComponentAlignment(btn_guardar, Alignment.BOTTOM_RIGHT);
 		
 	}
 }

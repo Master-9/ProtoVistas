@@ -11,6 +11,7 @@ import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextField;
@@ -49,7 +50,7 @@ public class StartView extends VerticalLayout implements View {
         //Resource regRap= new ThemeResource("can-stock-photo_csp5222148.jpg");
         
         /*Nav button to doctor  register view */
-        Button btn_register_ps = new Button("Registrarse",new Button.ClickListener() {
+        Button btn_register_ps = new Button("Crear Usuario",new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				// TODO Auto-generated method stub
@@ -85,14 +86,14 @@ public class StartView extends VerticalLayout implements View {
         setSpacing(true);
 
        
-        btn_login.setDescription("Login");
+        btn_login.setDescription("Ingresar");
         btn_login.setHeight("40px");
-        btn_login.setWidth("110px");
+        btn_login.setWidth("130px");
         
         
-        btn_register_ps.setDescription("Registrar Medico");
+        btn_register_ps.setDescription("Crear un nuevo Usuario");
         btn_register_ps.setHeight("40px");
-        btn_register_ps.setWidth("110px");
+        btn_register_ps.setWidth("130px");
         
         
         
@@ -105,16 +106,46 @@ public class StartView extends VerticalLayout implements View {
         Resource logo = new ThemeResource("gsami3.jpg");
         HorizontalLayout panelSupe= new HorizontalLayout();
         panelSupe.addComponents(btn_login,btn_register_ps);
-        panelSupe.setWidth("240px");
-        hor.addComponents(panelSupe);
+        panelSupe.setWidth("280px");
+        
+        
+        HorizontalLayout panelIzq= new HorizontalLayout();
+        ComboBox pais= new ComboBox("Elija un Pais");
+		pais.addItem("Venezuela");
+		pais.addItem("Colombia");
+		pais.addItem("Uruguay");
+		pais.addItem("España");
+		pais.addItem("Escocia");
+		pais.addItem("Egipto");
+		pais.addItem("Panana");
+		pais.addItem("United States");
+		pais.addItem("United Kingdom");
+		pais.setNullSelectionAllowed(false);
+		panelIzq.addComponents(pais);
+		panelIzq.setStyleName("izq");
+       
+        
+        hor.addComponents(panelIzq,panelSupe);
         hor.setStyleName("barraSup");
         //panelSupe.setSpacing(true);
         //panelSupe.setMargin(true);
         hor.setSizeFull();
         hor.setHeight("80px");
         //panelSupe.setContent(hor);
-        addComponents(hor);
-        setComponentAlignment(hor, Alignment.TOP_CENTER);
+        
+
+        
+        
+        Panel barra= new Panel();
+        barra.setSizeUndefined();
+        barra.setIcon(logo);
+        addComponents(hor,barra);
+        setComponentAlignment(hor, Alignment.TOP_LEFT);
+        hor.setComponentAlignment(panelIzq, Alignment.TOP_LEFT);
+        
+        setComponentAlignment(barra, Alignment.TOP_CENTER);
+        
+        
         //setMargin(true);
         setSpacing(true);
         setHeight("800px");

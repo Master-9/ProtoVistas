@@ -24,6 +24,7 @@ public class RegistrarUser extends Window {
 		tipoUser.addItem("Medico");
 		tipoUser.addItem("Paciente");
 		tipoUser.addItem("Contador");
+		tipoUser.setNullSelectionAllowed(false);
 		//String sel= tipoUser.getValue().toString();
 		
 		
@@ -55,7 +56,7 @@ public class RegistrarUser extends Window {
 		
 		VerticalLayout nada = new VerticalLayout();
 		
-		 Button btn_guardar = new Button("Guardar", new Button.ClickListener() {
+		 Button btn_guardar = new Button("Crear Usuario", new Button.ClickListener() {
 				@Override
 				public void buttonClick(ClickEvent event) {
 					// TODO Auto-generated method stub

@@ -1,6 +1,8 @@
 package com.example.pruebaDB;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.VerticalLayout;
 
 public class FormPSRapido extends Formulario {
 	
@@ -24,6 +26,9 @@ public class FormPSRapido extends Formulario {
 		colegio.focus();
 		colegio.setWidth("210px");
 		layout.addComponent(colegio);
+		
+		layout.addComponent(btn_guardar);
+		
 		
 	}
 }

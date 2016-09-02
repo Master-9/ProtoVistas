@@ -25,6 +25,7 @@ public class Autenticar extends Window {
 		tipoUser.addItem("Medico");
 		tipoUser.addItem("Paciente");
 		tipoUser.addItem("Contador");
+		tipoUser.setNullSelectionAllowed(false);
 		//String sel= tipoUser.getValue().toString();
 		
 		

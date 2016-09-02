@@ -5,6 +5,7 @@ import java.util.Date;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.server.Sizeable;
 import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
@@ -14,6 +15,8 @@ import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class Formulario extends Panel{
 	final protected TextField nombreApell;
@@ -24,6 +27,7 @@ public class Formulario extends Panel{
 	final protected ComboBox estadocivil;
 	final protected PopupDateField rif_vence;
 	final HorizontalLayout hl_rif;
+	final protected Button btn_guardar;
 	
 	protected FormLayout layout;
 	
@@ -63,6 +67,7 @@ public class Formulario extends Panel{
 		rif_p.addItem("E-");
 		rif_p.addItem("J-");
 		rif_p.setWidth("80px");
+		rif_p.setNullSelectionAllowed(false);
 
 
 		rif = new TextField();
@@ -91,10 +96,17 @@ public class Formulario extends Panel{
 		estadocivil.addItem("Soltero");
 		estadocivil.addItem("Casado");
 		estadocivil.addItem("Divorciado");
+		estadocivil.addItem("Viudo");
 		estadocivil.setWidth("210px");
 		layout.addComponent(estadocivil);
 		
-		
+		btn_guardar = new Button("Guardar", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		
 		

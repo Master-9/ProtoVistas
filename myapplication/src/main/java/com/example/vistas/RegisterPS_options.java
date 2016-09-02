@@ -7,6 +7,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -85,6 +86,7 @@ public class RegisterPS_options extends VerticalLayout implements View {
         hl_btns = new HorizontalLayout();
 		hl_btns.addComponents(vl_completo, vl_rapido, vl_directorio);
 		addComponent(hl_btns);
+		setComponentAlignment(hl_btns, Alignment.MIDDLE_CENTER);
         setMargin(true);
         setSpacing(true);
         		

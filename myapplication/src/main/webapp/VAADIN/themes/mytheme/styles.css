@@ -12941,6 +12941,10 @@ div.v-layout.v-horizontal.v-widget {
 	background: white;
 }
 
+.mytheme .izq {
+	margin-left: 20px;
+}
+
 .mytheme .v-ui {
 	background: url("white-background.jpg") no-repeat;
 	background-size: cover;
