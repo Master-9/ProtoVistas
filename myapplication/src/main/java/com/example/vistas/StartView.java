@@ -102,10 +102,13 @@ public class StartView extends VerticalLayout implements View {
         hor.setDefaultComponentAlignment(Alignment.MIDDLE_RIGHT);
         
        
-        Resource logo = new ThemeResource("gsami3.jpg");
+        Button btn_logo = new Button();
+        btn_logo.setIcon(new ThemeResource("gsami3.jpg"));
+        btn_logo.setStyleName("logo");
+        
         HorizontalLayout panelSupe= new HorizontalLayout();
-        panelSupe.addComponents(btn_login,btn_register_ps);
-        panelSupe.setWidth("240px");
+        panelSupe.addComponents(btn_logo,btn_login,btn_register_ps);
+        panelSupe.setWidth("400px");
         hor.addComponents(panelSupe);
         hor.setStyleName("barraSup");
         //panelSupe.setSpacing(true);

@@ -48,5 +48,23 @@
     background: url("white-background.jpg") no-repeat;
     background-size: cover;
   }
-  .mytheme img.v-icon {margin-top:-20px;}
+  .v-button-logo {
+  	background: transparent;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 9%;
+    padding:0;
+  }.v-button-logo:hover {
+    background-color: transparent;
+  }
+  .v-button-logo span img {
+  	background: transparent;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 9%;
+    width: 70px;
+    position: fixed;
+  }
 }
